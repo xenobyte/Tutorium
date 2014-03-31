@@ -1,0 +1,244 @@
+\documentclass[german,ignorenonframetext]{beamer} % wir wollen eine Präsentation erstellen
+
+\usepackage[ngerman]{babel} % für deutsche Spracheinstellungen
+\usepackage{graphics} % um Bilder einbinden zu können
+\usepackage[dvips]{epsfig} % um Bilder zu skalieren
+\usepackage[utf8]{inputenc} % wegen deutschen Umlauten (echte Männer nutzen UTF-8!)
+\usepackage{hyperref} % um Hyperlinks einfügen zu können
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%% Die folgenden Befehle definieren das Grundlayout, blenden auf der
+%%%%%%% Titelseite die HAW-Infos ein und setzen das 
+%%%%%%% HAW-Logo in die Ecke
+\mode<presentation>{\usetheme{Berkeley}}
+\logo{\pgfimage[height=1.5cm]{HAW_wuerfel+}}
+\institute[MT -- HAW Hamburg]{HAW Hamburg\\ Fakultät TI, Dept.\ Informatik}
+
+%%%%%%% der folgende Befehl lässt die mit "\pause" verdeckten Teile der Folien 
+%%%%%%% transparent erscheinen.  
+\setbeamercovered{transparent}  
+
+%%%%%%% die folgende Sequenz blendet mit jeder neuen Section einmal das 
+%%%%%%% Inhaltsverzeichnis mit dem Titel "Übersicht" ein und markiert den
+%%%%%%% jeweils aktuellen Gliederungspunkt
+\AtBeginSection[]{
+\begin{frame}<beamer>
+\frametitle{Übersicht} 
+\tableofcontents[currentsection,currentsubsection]
+\end{frame}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%% jeder dieser Titelseiten-Befehle kennt eine in eckige Klammern gesetzte 
+%%%%%%% Kurzform, die im Rand benutzt wird
+\title[Tutorium]{Tutorium}
+\subtitle{TSE / GE1}
+\author[Timo Briddigkeit]{Timo Briddigkeit}
+\date{\today}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%% dieser Befehl erzeugt das Deckblatt. 
+%%%%%% Mit der Option plain wird das Layout für das Deckblatt abgeschaltet
+%\frame[plain]{\titlepage}
+\frame{\titlepage}
+
+\begin{frame}
+  \frametitle{Übersicht}
+  \tableofcontents
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Allgemeine Informationen} % die sections sind hier nur zum Strukturieren des Vortrags!!
+%% der Name der section taucht nur im Inhaltsverzeichnis und im linken Rand auf.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Organisatorisches}
+In diesem Abschnitt besprechen wir organisatorische Themen und aktuelle Änderungen.
+\end{frame}
+
+\begin{frame}
+\frametitle{Git-Repository}
+Dieses Tutorium wird in einem Git-Repository auf GitHub organisiert.
+\begin{center}
+\pgfimage[width=0.5\textwidth]{QRGit} \\
+\url{https://github.com/xenobyte/Tutorium}
+\end{center}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Backlog}
+\begin{itemize}
+\item Was haben wir beim letzten mal besprochen?
+\pause
+\item Welche Fragen habt ihr mitgebracht?
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Eure Anforderungen an dieses Tutorium}
+\begin{itemize}
+\item mathematische Grundlagen
+\pause
+\item Klausur bestehen!
+\pause
+\item Übungsaufgaben rechnen
+\pause
+\item Tipps von Studenten aus höheren Semestern 
+\pause
+\item Zeitmanagement
+\pause
+\item Lernen lernen
+\end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Grundlagen}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Was wird in diesem Abschnitt vermittelt?}
+
+Studentische Grundfertigkeiten wie:
+\begin{itemize}
+\item "Lernen lernen"
+\item Zeitmanagement
+\item Umgang mit Studienunterlagen
+\item \LaTeX
+\item MATLAB / GNU Octave
+\item LTSpice
+\item Editor (Vim / Emacs / Whatever)
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Lernkanäle}
+\begin{frame}
+\frametitle{Wieviel behaltet ihr wohl?}
+\begin{center}
+\begin{tabular}{ | l | c | }
+\hline
+\textbf{Lernkanal} & \textbf{Bewertung} \\ \hline
+Lesen & 10\% \\ \hline
+Hören & 20\% \\ \hline
+Sehen & 30\% \\ \hline
+Hören u. Sehen & 50\% \\ \hline
+Selbst darüber sprechen & 70\% \\ \hline
+Ausprobieren & 90\% \\ \hline
+\end{tabular}
+\end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{LaTeX}
+\begin{frame}
+\frametitle{LaTeX}
+
+Einführung in die Textverarbeitung mit LaTeX\\
+
+\pause
+\begin{block}{Hinweis!}
+Den LaTeX Code zu diesen Folien und eine Vorlage für Laborprotokolle findet ihr im Git-Repository in dem Verzeichnis \textit{latex}
+\end{block}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{MATLAB}
+\begin{frame}
+\frametitle{MATLAB}
+\begin{itemize}
+\item Tool zur Lösung mathematischer Probleme
+\pause
+\item grafische Darstellung der Ergebnisse
+\pause
+\item primär für numerische Berechnungen mithilfe von Matrizen ausgelegt
+\pause
+\item In Hochschulen und der Industrie sehr verbreitet, vor allem für numerische Simulation sowie Datenerfassung, Datenanalyse
+\pause
+\item Die HAW besitzt eine Hochschullizenz für alle Studenten
+\end{itemize}
+\end{frame} 
+
+\begin{frame}
+\frametitle{MATLAB}
+\pgfimage[width=1.0\textwidth]{matlab}
+\end{frame} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Elektrotechnik}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Einige Grundformeln}
+\begin{itemize}
+\item Spannung?
+\item Stromstärke?
+\item Widerstand?
+\item Leistung?
+\end{itemize}
+\end{frame} 
+
+\begin{frame}
+\frametitle{Formelkreis}
+\begin{center}
+\pgfimage[width=0.7\textwidth]{formelrad}
+\end{center}
+\end{frame} 
+
+\end{document}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  besondere Gestaltungselemente für Vortragsfolien
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Folie
+\begin{frame}
+\frametitle{Folientitel}
+        Text, Bilder, Blöcke
+\end{frame}
+
+% neutraler Kasten
+\begin{block}{Blocktitel}
+        Blocktext
+\end{block}
+
+% grüner Kasten
+\begin{exampleblock}{Beispielblocktitel}
+        Beispielblocktext
+\end{exampleblock}
+
+% roter Kasten
+\begin{alertblock}{Warnungsblocktitel}
+        Warnungsblocktext
+\end{alertblock}
+
+% mehrspaltige Folie mit variablen Spaltenbreiten
+\begin{columns}
+\column{.55\textwidth}
+        Text oder Bild
+\column{.45\textwidth}
+        Text oder Bild
+\end{columns}
+
+% sukzessiver Folienaufbau 
+\pause
+
+% mehr Befehle für sukzessiven Folienaufbau, 
+% der geklammerte Teil erscheint jeweils ab der dritten Teil-Folie
+\uncover<3->{}
+\only<3->{}
+\invisible<1-2>{}
+
+% rote Markierung des geklammerten Teils bei der vierten Teil-Folie
+\alert<4>{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

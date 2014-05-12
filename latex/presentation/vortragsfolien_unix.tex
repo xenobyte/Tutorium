@@ -82,6 +82,15 @@ Dieses Tutorium wird in einem Git-Repository auf GitHub organisiert.
 \end{itemize}
 \end{frame}
 
+\begin{frame}
+\frametitle{Fragenzettel}
+\begin{itemize}
+\item Ich habe auch ein paar Fragen mitgebracht
+\pause
+\item Fragenzettel.pdf (siehe Git)
+\end{itemize}
+\end{frame}
+
 
 \begin{frame}
 \frametitle{Eure Anforderungen an dieses Tutorium}
@@ -176,6 +185,17 @@ Es empfiehlt sich über die Studienunterlagen zu indizieren, um schnell Informat
 \end{itemize}
 \end{frame}
 
+\begin{frame}
+\frametitle{Praktikumsaufgaben}
+\begin{itemize}
+\item Wie gehe ich an solche Aufgaben heran?
+\pause
+\item Welche Möglichkeiten habe ich Abläufe darzustellen?
+\pause
+\item Wie zeitintensiv ist die Aufgabe?
+\end{itemize}
+\end{frame}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{LaTeX}
@@ -216,6 +236,7 @@ Den LaTeX Code zu diesen Folien und eine Vorlage für Laborprotokolle findet ihr
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Elektrotechnik}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Gleichstrom}
 \begin{frame}
 \frametitle{Einige Grundformeln}
 \begin{itemize}
@@ -244,6 +265,82 @@ Parallel geschaltet:
 \begin{eqnarray}
 \frac{1}{R_{ges}} = \frac{1}{R_{1}} + \frac{1}{R_{2}} + \frac{1}{R_{n}}
 \end{eqnarray}
+
+oder:
+\begin{eqnarray}
+R_{ges} = \frac{R_{1} + R_{2}}{R_{1} \cdot R_{2}}
+\end{eqnarray}
+
+\end{frame}
+
+\subsection{Wechselstrom}
+\begin{frame}
+\frametitle{Wechselstrom}
+In Wechselstromkreisen rechnen wir im komplexen Zahlen, um uns einige Sachen zu vereinfachen. Leider bereitet das vielen Studenten
+anfangs Probleme :-(
+\end{frame}
+
+\begin{frame}
+\frametitle{Phasenwinkel}
+\begin{center}
+\includegraphics[scale=0.5]{../phase.png} 
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Impedanz}
+\begin{block}{Hinweis}
+Sprechen wir von Impedanz, dann meinen wir einen Widerstand im Wechselstromkreis!
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Kondensator}
+Impedanz:
+\begin{center}
+\begin{eqnarray}
+Z_{C} = \dfrac{1}{j \omega C} \cdot \dfrac{j}{j} = - \dfrac{j}{\omega C} = j \cdot (\dfrac{1}{- \omega C})
+\end{eqnarray}
+\end{center}
+\begin{alertblock}{Achtung!}
+Die Formeln für Reihen- und Parallelschaltungen sind beim Kondensator vertauscht!
+\end{alertblock}
+\end{frame}
+
+\begin{frame}
+\frametitle{Kondensator}
+Ladungsmenge:
+\begin{eqnarray}
+Q = C \cdot U
+\end{eqnarray}
+
+\begin{itemize}
+\item Q Ladung in C (As)
+\item C Kapazität in F
+\item U Spannung in V
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Impedanz einer Spule}
+\begin{center}
+\begin{eqnarray}
+Z_{S} = j \omega L
+\end{eqnarray}
+\end{center}
+L ist die Induktivität in H
+\end{frame}
+
+
+\subsection{Transiente Vorgänge}
+\begin{frame}
+\frametitle{Transiente Vorgänge}
+\begin{center}
+\begin{eqnarray}
+i_{L} = I_{e} ( 1 - e^{\frac{-t}{T}}
+\end{eqnarray}
+Wobei $L$ und $I_{e}$ zu ermitteln sind
+\end{center}
 \end{frame}
 
 \end{document}
